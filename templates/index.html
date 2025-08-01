@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Artifact Generator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .main-content {
+            padding: 40px;
+        }
+
+        .upload-section {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .upload-section h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .file-upload-group {
+            margin-bottom: 25px;
+        }
+
+        .file-upload-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #555;
+        }
+
+        .file-input-wrapper {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .file-input {
+            width: 100%;
+            padding: 12px;
+            border: 2px dashed #ddd;
+            border-radius: 8px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .file-input:hover {
+            border-color: #667eea;
+            background: #f8f9ff;
+        }
+
+        .file-input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .upload-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .upload-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .upload-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .progress-section {
+            display: none;
+            margin-top: 30px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #e9ecef;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .status-text {
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .results-section {
+            display: none;
+            margin-top: 30px;
+        }
+
+        .results-header {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .results-header h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .artifact-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .artifact-card {
+            background: white;
+            border: 1px solid #e9ecef;
+            border-radius: 10px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .artifact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .artifact-card h4 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .artifact-card p {
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .download-btn {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .download-btn:hover {
+            background: #218838;
+            transform: translateY(-1px);
+        }
+
+        .error-message {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            border: 1px solid #f5c6cb;
+        }
+
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            border: 1px solid #c3e6cb;
+        }
+
+        .file-info {
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                border-radius: 15px;
+            }
+
+            .header {
+                padding: 30px 20px;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .main-content {
+                padding: 20px;
+            }
+
+            .artifact-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Test Artifact Generator</h1>
+            <p>Upload requirements, UX mockups, and templates to generate comprehensive test cases, plans, and reports</p>
+        </div>
+
+        <div class="main-content">
+            <div class="upload-section">
+                <h2>Upload Documents</h2>
+                <form id="uploadForm" enctype="multipart/form-data">
+                    <div class="file-upload-group">
+                        <label for="requirements">Requirements Document *</label>
+                        <div class="file-input-wrapper">
+                            <input type="file" id="requirements" name="requirements" class="file-input" 
+                                   accept=".pdf,.docx,.doc,.txt" required>
+                        </div>
+                        <div class="file-info">Supported formats: PDF, DOCX, DOC, TXT</div>
+                    </div>
+
+                    <div class="file-upload-group">
+                        <label for="ux_mockups">UX Mockups *</label>
+                        <div class="file-input-wrapper">
+                            <input type="file" id="ux_mockups" name="ux_mockups" class="file-input" 
+                                   accept=".pdf,.png,.jpg,.jpeg,.docx,.doc,.txt" required>
+                        </div>
+                        <div class="file-info">Supported formats: PDF, PNG, JPG, JPEG, DOCX, DOC, TXT</div>
+                    </div>
+
+                    <div class="file-upload-group">
+                        <label for="templates">Templates *</label>
+                        <div class="file-input-wrapper">
+                            <input type="file" id="templates" name="templates" class="file-input" 
+                                   accept=".pdf,.docx,.doc,.txt" required>
+                        </div>
+                        <div class="file-info">Supported formats: PDF, DOCX, DOC, TXT</div>
+                    </div>
+
+                    <button type="submit" class="upload-btn" id="uploadBtn">
+                        Generate Test Artifacts
+                    </button>
+                </form>
+            </div>
+
+            <div class="progress-section" id="progressSection">
+                <h3>Processing...</h3>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <div class="status-text" id="statusText">Analyzing documents...</div>
+            </div>
+
+            <div class="results-section" id="resultsSection">
+                <div class="results-header">
+                    <h3>Generated Test Artifacts</h3>
+                    <p>Your test artifacts have been generated successfully. Download the PDF reports below.</p>
+                </div>
+
+                <div class="artifact-cards">
+                    <div class="artifact-card">
+                        <h4>Test Cases</h4>
+                        <p>Comprehensive test cases covering functional, non-functional, edge cases, and integration scenarios.</p>
+                        <a href="#" class="download-btn" id="downloadTestCases">Download PDF</a>
+                    </div>
+
+                    <div class="artifact-card">
+                        <h4>Test Plan</h4>
+                        <p>Detailed test plan including scope, objectives, strategy, schedule, and resource requirements.</p>
+                        <a href="#" class="download-btn" id="downloadTestPlan">Download PDF</a>
+                    </div>
+
+                    <div class="artifact-card">
+                        <h4>Test Report</h4>
+                        <p>Comprehensive test report with execution results, defect summary, and recommendations.</p>
+                        <a href="#" class="download-btn" id="downloadTestReport">Download PDF</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentSessionId = null;
+
+        document.getElementById('uploadForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData();
+            const requirementsFile = document.getElementById('requirements').files[0];
+            const uxMockupsFile = document.getElementById('ux_mockups').files[0];
+            const templatesFile = document.getElementById('templates').files[0];
+
+            if (!requirementsFile || !uxMockupsFile || !templatesFile) {
+                showMessage('Please select all required files.', 'error');
+                return;
+            }
+
+            formData.append('requirements', requirementsFile);
+            formData.append('ux_mockups', uxMockupsFile);
+            formData.append('templates', templatesFile);
+
+            // Show progress
+            document.getElementById('progressSection').style.display = 'block';
+            document.getElementById('resultsSection').style.display = 'none';
+            document.getElementById('uploadBtn').disabled = true;
+
+            // Simulate progress
+            simulateProgress();
+
+            try {
+                const response = await fetch('/upload', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    currentSessionId = result.session_id;
+                    showMessage(`Successfully generated ${result.test_cases_count} test cases!`, 'success');
+                    document.getElementById('resultsSection').style.display = 'block';
+                    
+                    // Update download links
+                    document.getElementById('downloadTestCases').href = `/download/${currentSessionId}/test_cases`;
+                    document.getElementById('downloadTestPlan').href = `/download/${currentSessionId}/test_plan`;
+                    document.getElementById('downloadTestReport').href = `/download/${currentSessionId}/test_report`;
+                } else {
+                    showMessage(result.error || 'An error occurred during processing.', 'error');
+                }
+            } catch (error) {
+                showMessage('Network error. Please try again.', 'error');
+            } finally {
+                document.getElementById('progressSection').style.display = 'none';
+                document.getElementById('uploadBtn').disabled = false;
+            }
+        });
+
+        function simulateProgress() {
+            const progressFill = document.getElementById('progressFill');
+            const statusText = document.getElementById('statusText');
+            const statuses = [
+                'Analyzing requirements document...',
+                'Processing UX mockups...',
+                'Extracting template information...',
+                'Generating test cases...',
+                'Creating test plan...',
+                'Compiling test report...',
+                'Finalizing artifacts...'
+            ];
+            
+            let progress = 0;
+            let statusIndex = 0;
+            
+            const interval = setInterval(() => {
+                progress += Math.random() * 15;
+                if (progress > 100) progress = 100;
+                
+                progressFill.style.width = progress + '%';
+                
+                if (statusIndex < statuses.length) {
+                    statusText.textContent = statuses[statusIndex];
+                    statusIndex++;
+                }
+                
+                if (progress >= 100) {
+                    clearInterval(interval);
+                }
+            }, 500);
+        }
+
+        function showMessage(message, type) {
+            // Remove existing messages
+            const existingMessages = document.querySelectorAll('.error-message, .success-message');
+            existingMessages.forEach(msg => msg.remove());
+
+            const messageDiv = document.createElement('div');
+            messageDiv.className = type === 'error' ? 'error-message' : 'success-message';
+            messageDiv.textContent = message;
+
+            document.querySelector('.upload-section').appendChild(messageDiv);
+
+            // Auto-remove after 5 seconds
+            setTimeout(() => {
+                messageDiv.remove();
+            }, 5000);
+        }
+
+        // File input styling
+        document.querySelectorAll('.file-input').forEach(input => {
+            input.addEventListener('change', function() {
+                const fileName = this.files[0]?.name || 'No file selected';
+                this.setAttribute('data-file', fileName);
+            });
+        });
+    </script>
+</body>
+</html> 

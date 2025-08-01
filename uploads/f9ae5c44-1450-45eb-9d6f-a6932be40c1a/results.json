@@ -1,0 +1,85 @@
+{
+  "session_id": "f9ae5c44-1450-45eb-9d6f-a6932be40c1a",
+  "test_cases": {
+    "test_cases": [
+      {
+        "id": "TC001",
+        "title": "Sample Test Case",
+        "description": "This is a sample test case generated when AI is not available",
+        "preconditions": [
+          "System is running",
+          "User is logged in"
+        ],
+        "test_steps": [
+          "Step 1: Navigate to the application",
+          "Step 2: Perform the action",
+          "Step 3: Verify the result"
+        ],
+        "expected_result": "Expected outcome is achieved",
+        "test_type": "functional",
+        "priority": "medium",
+        "category": "UI"
+      }
+    ]
+  },
+  "test_plan": {
+    "test_plan": {
+      "project_name": "Sample Project",
+      "version": "1.0",
+      "test_scope": "Sample test scope",
+      "test_objectives": [
+        "Objective 1",
+        "Objective 2"
+      ],
+      "test_strategy": "Sample testing strategy",
+      "test_environment": "Sample test environment",
+      "test_schedule": "1 week",
+      "test_resources": "Sample resources",
+      "risk_assessment": "Sample risks",
+      "entry_criteria": [
+        "Criteria 1"
+      ],
+      "exit_criteria": [
+        "Criteria 1"
+      ],
+      "test_phases": [
+        {
+          "phase": "Unit Testing",
+          "duration": "1 week",
+          "responsible": "Development Team",
+          "deliverables": [
+            "Unit test results"
+          ]
+        }
+      ]
+    }
+  },
+  "test_report": {
+    "test_report": {
+      "project_name": "Sample Project",
+      "report_date": "2025-08-01",
+      "test_summary": {
+        "total_tests": 1,
+        "passed": 0.8,
+        "failed": 0.15,
+        "blocked": 0.05,
+        "pass_rate": "80%"
+      },
+      "test_results": [],
+      "defects_summary": {
+        "total_defects": 0,
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0
+      },
+      "recommendations": [
+        "Sample recommendation"
+      ],
+      "next_steps": [
+        "Sample next step"
+      ]
+    }
+  },
+  "timestamp": "2025-08-01T11:27:26.726001"
+}

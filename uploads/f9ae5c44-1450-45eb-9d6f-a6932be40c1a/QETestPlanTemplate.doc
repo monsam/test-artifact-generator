@@ -1,0 +1,530 @@
+Date: Fri, 1 Aug 2025 17:52:45 +0000 (UTC)
+Message-ID: <494595682.35.1754070765474@a402b49ae414>
+Subject: Exported From Confluence
+MIME-Version: 1.0
+Content-Type: multipart/related; 
+	boundary="----=_Part_34_1124900366.1754070765474"
+
+------=_Part_34_1124900366.1754070765474
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+Content-Location: file:///C:/exported.html
+
+<html xmlns:o=3D'urn:schemas-microsoft-com:office:office'
+      xmlns:w=3D'urn:schemas-microsoft-com:office:word'
+      xmlns:v=3D'urn:schemas-microsoft-com:vml'
+      xmlns=3D'urn:w3-org-ns:HTML'>
+<head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8=
+">
+    <title>QE  Test Plan Template</title>
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:TargetScreenSize>1024x640</o:TargetScreenSize>
+            <o:PixelsPerInch>72</o:PixelsPerInch>
+            <o:AllowPNG/>
+        </o:OfficeDocumentSettings>
+        <w:WordDocument>
+            <w:View>Print</w:View>
+            <w:Zoom>90</w:Zoom>
+            <w:DoNotOptimizeForBrowser/>
+        </w:WordDocument>
+    </xml>
+    <![endif]-->
+    <style>
+                <!--
+        @page Section1 {
+            size: 8.5in 11.0in;
+            margin: 1.0in;
+            mso-header-margin: .5in;
+            mso-footer-margin: .5in;
+            mso-paper-source: 0;
+        }
+
+        table {
+            border: solid 1px;
+            border-collapse: collapse;
+        }
+
+        table td, table th {
+            border: solid 1px;
+            padding: 5px;
+        }
+
+        td {
+            page-break-inside: avoid;
+        }
+
+        tr {
+            page-break-after: avoid;
+        }
+
+        div.Section1 {
+            page: Section1;
+        }
+
+        /* Confluence print stylesheet. Common to all themes for print medi=
+a */
+/* Full of !important until we improve batching for print CSS */
+
+@media print {
+    #main {
+        padding-bottom: 1em !important; /* The default padding of 6em is to=
+o much for printouts */
+    }
+
+    body {
+        font: var(--ds-font-body-small, Arial, Helvetica, FreeSans, sans-se=
+rif);
+    }
+
+    body, #full-height-container, #main, #page, #content, .has-personal-sid=
+ebar #content {
+        background: var(--ds-surface, #fff) !important;
+        color: var(--ds-text, #000) !important;
+        border: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: block !important;
+    }
+
+    a, a:link, a:visited, a:focus, a:hover, a:active {
+        color: var(--ds-text, #000);
+    }
+
+    #content h1,
+    #content h2,
+    #content h3,
+    #content h4,
+    #content h5,
+    #content h6 {
+        page-break-after: avoid;
+    }
+
+    pre {
+        font: var(--ds-font-code, Monaco, "Courier New", monospace);
+    }
+
+    #header,
+    .aui-header-inner,
+    #navigation,
+    #sidebar,
+    .sidebar,
+    #personal-info-sidebar,
+    .ia-fixed-sidebar,
+    .page-actions,
+    .navmenu,
+    .ajs-menu-bar,
+    .noprint,
+    .inline-control-link,
+    .inline-control-link a,
+    a.show-labels-editor,
+    .global-comment-actions,
+    .comment-actions,
+    .quick-comment-container,
+    #addcomment {
+        display: none !important;
+    }
+
+    /* CONF-28544 cannot print multiple pages in IE */
+    #splitter-content {
+        position: relative !important;
+    }
+
+    .comment .date::before {
+        content: none !important; /* remove middot for print view */
+    }
+
+    h1.pagetitle img {
+        height: auto;
+        width: auto;
+    }
+
+    .print-only {
+        display: block;
+    }
+
+    #footer {
+        position: relative !important; /* CONF-17506 Place the footer at en=
+d of the content */
+        margin: 0;
+        padding: 0;
+        background: none;
+        clear: both;
+    }
+
+    #poweredby {
+        border-top: none;
+        background: none;
+    }
+
+    #poweredby li.print-only {
+        display: list-item;
+        font-style: italic;
+    }
+
+    #poweredby li.noprint {
+        display: none;
+    }
+
+    /* no width controls in print */
+    .wiki-content .table-wrap,
+    .wiki-content p,
+    .panel .codeContent,
+    .panel .codeContent pre,
+    .image-wrap {
+        overflow: visible !important;
+    }
+
+    /* TODO - should this work? */
+    #children-section,
+    #comments-section .comment,
+    #comments-section .comment .comment-body,
+    #comments-section .comment .comment-content,
+    #comments-section .comment p {
+        page-break-inside: avoid;
+    }
+
+    #page-children a {
+        text-decoration: none;
+    }
+
+    /**
+     hide twixies
+
+     the specificity here is a hack because print styles
+     are getting loaded before the base styles. */
+    #comments-section.pageSection .section-header,
+    #comments-section.pageSection .section-title,
+    #children-section.pageSection .section-header,
+    #children-section.pageSection .section-title,
+    .children-show-hide {
+        padding-left: 0;
+        margin-left: 0;
+    }
+
+    .children-show-hide.icon {
+        display: none;
+    }
+
+    /* personal sidebar */
+    .has-personal-sidebar #content {
+        margin-right: 0px;
+    }
+
+    .has-personal-sidebar #content .pageSection {
+        margin-right: 0px;
+    }
+
+    .no-print, .no-print * {
+        display: none !important;
+    }
+}
+-->
+    </style>
+</head>
+<body>
+    <h1>QE  Test Plan Template</h1>
+    <div class=3D"Section1">
+        <h1 id=3D"QETestPlanTemplate-Objective">Objective</h1>
+<p>The main objective of testing is to make sure the system works according=
+ to the requirements, find as many defects as possible up front, relate the=
+ same to the development team, and ensure that a quality system is delivere=
+d.</p>
+<h1 id=3D"QETestPlanTemplate-Overview">Overview</h1>
+<p>overview</p>
+<h2 id=3D"QETestPlanTemplate-Documentation">Documentation</h2>
+<div class=3D"table-wrap">
+<table data-table-width=3D"760" data-layout=3D"default" data-local-id=3D"a5=
+1a0157-9b05-48cb-984c-30c6049c103e" class=3D"confluenceTable">
+<tbody>
+<tr>
+<th class=3D"confluenceTh">
+<p></p></th>
+<th class=3D"confluenceTh">
+<p></p></th>
+</tr>
+<tr>
+<td class=3D"confluenceTd">
+<p>CFI</p></td>
+<td class=3D"confluenceTd">
+<p></p></td>
+</tr>
+<tr>
+<td class=3D"confluenceTd">
+<p>PRD</p></td>
+<td class=3D"confluenceTd">
+<p></p></td>
+</tr>
+<tr>
+<td class=3D"confluenceTd">
+<p>Miro</p></td>
+<td class=3D"confluenceTd">
+<p></p></td>
+</tr>
+<tr>
+<td class=3D"confluenceTd">
+<p></p></td>
+<td class=3D"confluenceTd">
+<p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id=3D"QETestPlanTemplate-Preconditions">Preconditions</h2>
+<p></p>
+<h2 id=3D"QETestPlanTemplate-InScope">In Scope</h2>
+<ul>
+<li>
+<p></p></li>
+<li>
+<p>&nbsp;<br></p></li>
+</ul>
+<h2 id=3D"QETestPlanTemplate-OutofScope">Out of Scope</h2>
+<ul>
+<li>
+<p></p></li>
+<li>
+<p></p></li>
+</ul>
+<p>&nbsp;</p>
+<div class=3D"table-wrap">
+<table data-table-width=3D"760" data-layout=3D"default" data-local-id=3D"f4=
+ac7632-864b-43fa-b512-27c3702274a5" class=3D"confluenceTable">
+<colgroup>
+<col style=3D"width: 204.0px;">
+<col style=3D"width: 246.0px;">
+<col style=3D"width: 310.0px;">
+</colgroup>
+<tbody>
+<tr>
+<th data-highlight-colour=3D"#f0f1f2" class=3D"confluenceTh">
+<p><strong>Teams</strong></p></th>
+<th data-highlight-colour=3D"#f0f1f2" class=3D"confluenceTh">
+<p><strong>leads</strong></p></th>
+<th data-highlight-colour=3D"#f0f1f2" class=3D"confluenceTh">
+<p><strong>slack channel</strong></p></th>
+</tr>
+<tr>
+<td data-highlight-colour=3D"#ffffff" class=3D"confluenceTd">
+<p>Overall</p></td>
+<td data-highlight-colour=3D"#ffffff" class=3D"confluenceTd">
+<p></p></td>
+<td data-highlight-colour=3D"#ffffff" class=3D"confluenceTd">
+<p>&nbsp;</p></td>
+</tr>
+<tr>
+<td data-highlight-colour=3D"#ffffff" class=3D"confluenceTd">
+<p></p></td>
+<td data-highlight-colour=3D"#ffffff" class=3D"confluenceTd">
+<p></p></td>
+<td data-highlight-colour=3D"#ffffff" class=3D"confluenceTd">
+<p></p></td>
+</tr>
+<tr>
+<td data-highlight-colour=3D"#ffffff" class=3D"confluenceTd">
+<p></p></td>
+<td data-highlight-colour=3D"#ffffff" class=3D"confluenceTd">
+<p></p></td>
+<td data-highlight-colour=3D"#ffffff" class=3D"confluenceTd">
+<p></p></td>
+</tr>
+<tr>
+<td data-highlight-colour=3D"#ffffff" class=3D"confluenceTd">
+<p></p></td>
+<td data-highlight-colour=3D"#ffffff" class=3D"confluenceTd">
+<p></p></td>
+<td data-highlight-colour=3D"#ffffff" class=3D"confluenceTd">
+<p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>&nbsp;</p>
+<h2 id=3D"QETestPlanTemplate-Deliverables">Deliverables</h2>
+<h2 id=3D"QETestPlanTemplate-UserFlows">User Flows</h2>
+<p>User Flow Diagram</p>
+<p></p>
+<h3 id=3D"QETestPlanTemplate-DetailedScenarios">Detailed Scenarios<br>
+&nbsp;</h3>
+<div class=3D"table-wrap">
+<table data-table-width=3D"760" data-layout=3D"default" data-local-id=3D"68=
+02d343-24e1-4303-b436-4edf73cf1c50" class=3D"confluenceTable">
+<colgroup>
+<col style=3D"width: 253.0px;">
+<col style=3D"width: 210.0px;">
+<col style=3D"width: 296.0px;">
+</colgroup>
+<tbody>
+<tr>
+<th data-highlight-colour=3D"#f4f5f7" class=3D"confluenceTh">
+<p><strong>Stakeholder</strong></p></th>
+<th data-highlight-colour=3D"#f4f5f7" class=3D"confluenceTh">
+<p><strong>Test Plan Sign-off</strong></p></th>
+<th data-highlight-colour=3D"#f4f5f7" class=3D"confluenceTh">
+<p>&nbsp;</p></th>
+</tr>
+<tr>
+<td data-highlight-colour=3D"#ffffff" class=3D"confluenceTd">
+<p></p></td>
+<td data-highlight-colour=3D"#ffffff" class=3D"confluenceTd">
+<ul class=3D"inline-task-list" data-inline-tasks-content-id=3D"4884398205">
+<li data-inline-task-id=3D"362"><span class=3D"placeholder-inline-tasks">Ap=
+prove</span></li>
+</ul></td>
+<td data-highlight-colour=3D"#ffffff" class=3D"confluenceTd">
+<p>&nbsp;</p></td>
+</tr>
+<tr>
+<td data-highlight-colour=3D"#ffffff" class=3D"confluenceTd">
+<p></p></td>
+<td data-highlight-colour=3D"#ffffff" class=3D"confluenceTd">
+<ul class=3D"inline-task-list" data-inline-tasks-content-id=3D"4884398205">
+<li data-inline-task-id=3D"363"><span class=3D"placeholder-inline-tasks">Ap=
+prove</span></li>
+</ul></td>
+<td data-highlight-colour=3D"#ffffff" class=3D"confluenceTd">
+<p>&nbsp;</p></td>
+</tr>
+<tr>
+<td data-highlight-colour=3D"#ffffff" class=3D"confluenceTd">
+<p></p></td>
+<td data-highlight-colour=3D"#ffffff" class=3D"confluenceTd">
+<ul class=3D"inline-task-list" data-inline-tasks-content-id=3D"4884398205">
+<li data-inline-task-id=3D"364"><span class=3D"placeholder-inline-tasks">Ap=
+prove</span></li>
+</ul></td>
+<td data-highlight-colour=3D"#ffffff" class=3D"confluenceTd">
+<p>&nbsp;</p></td>
+</tr>
+<tr>
+<td data-highlight-colour=3D"#ffffff" class=3D"confluenceTd">
+<p></p></td>
+<td data-highlight-colour=3D"#ffffff" class=3D"confluenceTd">
+<p></p></td>
+<td data-highlight-colour=3D"#ffffff" class=3D"confluenceTd">
+<p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>&nbsp;</p>
+<div class=3D"table-wrap">
+<table data-table-width=3D"1200" data-layout=3D"center" data-local-id=3D"9b=
+ff3ef9-ab50-4586-952d-54ac20ed4976" class=3D"confluenceTable">
+<colgroup>
+<col style=3D"width: 392.0px;">
+<col style=3D"width: 487.0px;">
+<col style=3D"width: 321.0px;">
+</colgroup>
+<tbody>
+<tr>
+<th data-highlight-colour=3D"#f0f1f2" class=3D"confluenceTh">
+<p><strong>Scenario</strong></p></th>
+<th data-highlight-colour=3D"#f0f1f2" class=3D"confluenceTh">
+<p><strong>Step</strong></p></th>
+<th data-highlight-colour=3D"#f0f1f2" class=3D"confluenceTh">
+<p><strong>Expected Result</strong></p></th>
+</tr>
+<tr>
+<td data-highlight-colour=3D"#ffffff" class=3D"confluenceTd">
+<p></p></td>
+<td data-highlight-colour=3D"#ffffff" class=3D"confluenceTd">
+<p></p></td>
+<td data-highlight-colour=3D"#ffffff" class=3D"confluenceTd">
+<p></p></td>
+</tr>
+<tr>
+<td data-highlight-colour=3D"#ffffff" class=3D"confluenceTd">
+<p></p></td>
+<td data-highlight-colour=3D"#ffffff" class=3D"confluenceTd">
+<p></p></td>
+<td data-highlight-colour=3D"#ffffff" class=3D"confluenceTd">
+<p></p></td>
+</tr>
+<tr>
+<td data-highlight-colour=3D"#ffffff" class=3D"confluenceTd">
+<p></p></td>
+<td data-highlight-colour=3D"#ffffff" class=3D"confluenceTd">
+<p></p></td>
+<td data-highlight-colour=3D"#ffffff" class=3D"confluenceTd">
+<p></p></td>
+</tr>
+<tr>
+<td data-highlight-colour=3D"#ffffff" class=3D"confluenceTd">
+<p></p></td>
+<td data-highlight-colour=3D"#ffffff" class=3D"confluenceTd">
+<p></p></td>
+<td data-highlight-colour=3D"#ffffff" class=3D"confluenceTd">
+<p></p></td>
+</tr>
+<tr>
+<td data-highlight-colour=3D"#ffffff" class=3D"confluenceTd">
+<p></p></td>
+<td data-highlight-colour=3D"#ffffff" class=3D"confluenceTd">
+<p></p></td>
+<td data-highlight-colour=3D"#ffffff" class=3D"confluenceTd">
+<p></p></td>
+</tr>
+<tr>
+<td data-highlight-colour=3D"#ffffff" class=3D"confluenceTd">
+<p></p></td>
+<td data-highlight-colour=3D"#ffffff" class=3D"confluenceTd">
+<p></p></td>
+<td data-highlight-colour=3D"#ffffff" class=3D"confluenceTd">
+<p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>&nbsp;</p>
+<h2 id=3D"QETestPlanTemplate-Performance">Performance<br></h2>
+<p></p>
+<h2 id=3D"QETestPlanTemplate-Automation">Automation<br></h2>
+<h1 id=3D"QETestPlanTemplate-Schedule">Schedule</h1>
+<ul>
+<li>
+<p></p></li>
+</ul>
+<h1 id=3D"QETestPlanTemplate-TestEnv">Test Env</h1>
+<ul>
+<li>
+<p></p></li>
+<li>
+<p></p></li>
+</ul>
+<h1 id=3D"QETestPlanTemplate-Resources">Resources</h1>
+<ul>
+<li>
+<p>QE Lead:</p></li>
+<li>
+<p>QE:</p></li>
+<li>
+<p>Effort Estimation: #S</p></li>
+</ul>
+<h1 id=3D"QETestPlanTemplate-DefectTracking">Defect Tracking</h1>
+<ul>
+<li>
+<p>File defects in the QENG project with labels <strong>&lt;&gt;</strong>wi=
+th the Component field.</p></li>
+<li>
+<p>When defects are fixed, developers should change the status to <strong>I=
+n Review</strong>; then, the QE team will validate and close the defect.&nb=
+sp;</p></li>
+</ul>
+<h1 id=3D"QETestPlanTemplate-Risk">Risk</h1>
+<ul>
+<li>
+<p>List any risks</p></li>
+<li>
+<p></p></li>
+</ul>
+<p>&nbsp;</p>
+    </div>
+</body>
+</html>
+------=_Part_34_1124900366.1754070765474--
